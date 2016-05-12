@@ -1,8 +1,8 @@
 ## 
-## autoremediate-telnet.py: Lambda function to automatically remediate Evident Global Telnet Signature
+## autoremediate-EC2-002.py: Lambda function to automatically remediate Evident Global SSH Signature
 ##
 ## PROVIDED AS IS WITH NO WARRANTY OR GUARANTEES
-## Copyright (c) 2015 Evident.io, Inc., All Rights Reserved
+## Copyright (c) 2016 Evident.io, Inc., All Rights Reserved
 ##
 from __future__ import print_function
 
@@ -15,7 +15,7 @@ print('Loading function')
 def lambda_handler(event, context):
     message = event['Records'][0]['Sns']['Message']
 
-    bad_port = 23
+    bad_port = 22
     
     alert = json.loads(message)
     data = alert['data']
