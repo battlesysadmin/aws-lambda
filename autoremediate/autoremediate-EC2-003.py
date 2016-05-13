@@ -29,7 +29,7 @@ def lambda_handler(event, context):
             metadata = i
     
     region = re.sub('_','-',regions['attributes']['code'])
-    security_group = metadata['attributes']['data']['securityGroup']
+    security_group = metadata['attributes']['data']['details']['securityGroup']
     sg_id = security_group['groupId']
     sg_name = security_group['groupName']
     sg_description = security_group['description']
